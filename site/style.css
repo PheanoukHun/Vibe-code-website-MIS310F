@@ -1,0 +1,103 @@
+/* Fernlight Greenhouse Café: shared stylesheet for index.html and menu.html */
+:root {
+  --leaf-dark: #1f3d2b;   /* text on cream: ~11:1 contrast */
+  --leaf: #2f5d3f;        /* header/footer bg; cream text on it: ~7:1 */
+  --leaf-light: #dcebd8;
+  --cream: #f7f2e4;
+  --sun: #fff3c4;
+  --clay: #8a4b2a;        /* accent text on cream: ~6:1 */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--leaf-dark);
+  background: var(--cream);
+}
+
+header {
+  background: var(--leaf);
+  color: var(--cream);
+  text-align: center;
+  padding: 1.5rem 1rem 1rem;
+}
+
+header img.logo { width: 140px; max-width: 40vw; height: auto; }
+header h1 { margin: 0.5rem 0 0.25rem; font-size: 2.2rem; letter-spacing: 0.02em; }
+header .tagline { margin: 0; font-style: italic; font-size: 1.15rem; }
+
+nav { margin-top: 1rem; }
+nav a {
+  display: inline-block;
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.4rem 1.1rem;
+  margin: 0 0.25rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+}
+nav a:hover, nav a:focus { border-color: var(--cream); }
+nav a[aria-current="page"] { background: var(--cream); color: var(--leaf-dark); }
+
+main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 2.5rem; }
+
+h2 {
+  color: var(--leaf);
+  margin-top: 2.2rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Underline beneath each heading, exactly as wide as the heading text */
+h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--leaf-light);
+  margin-top: 0.25rem;
+}
+
+a { color: var(--clay); }
+
+table { width: 100%; border-collapse: collapse; background: #fffdf6; }
+caption { text-align: left; font-weight: bold; padding: 0.4rem 0; }
+th, td { padding: 0.55rem 0.75rem; text-align: left; border-bottom: 1px solid var(--leaf-light); }
+th { background: var(--leaf); color: var(--cream); }
+td.price, th.price { text-align: right; white-space: nowrap; }
+
+.card {
+  background: #fffdf6;
+  border: 2px solid var(--leaf-light);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+hr { border: 0; border-top: 3px solid var(--leaf-light); margin: 2rem 0; }
+
+address { font-style: normal; }
+
+figure { margin: 1.5rem 0; }
+figure img { width: 100%; height: auto; border-radius: 12px; border: 2px solid var(--leaf-light); }
+figcaption { font-size: 0.95rem; font-style: italic; margin-top: 0.4rem; text-align: center; }
+
+.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; }
+
+footer {
+  background: var(--leaf);
+  color: var(--cream);
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.75rem; }
+  th, td { padding: 0.45rem 0.5rem; }
+}
